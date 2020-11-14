@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sno: 1
+  items: 1
+  total: 1
+  discount: 1
+  amount: 1
+
+two:
+  sno: 1
+  items: 1
+  total: 1
+  discount: 1
+  amount: 1

@@ -1,0 +1,72 @@
+<%= form_with(model: addstock, local: true) do |form| %>
+  <% if addstock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(addstock.errors.count, "error") %> prohibited this addstock from being saved:</h2>
+
+      <ul>
+      <% addstock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :medicine_name %>
+    <%= form.collection_select :medicine_id, Medicine.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.number_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacturer_date %>
+    <%= form.text_field :manufacturer_date, type: :date, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiry_date %>
+    <%= form.text_field :expiry_date, type: :date, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
+    <div class="col-lg-3">
+      <div class="well sidebar-nav">
+        <h3>Add Medicine</h3>
+        <ul class="nav nav-list">
+          <li class="nav-header"> </li>
+            <%= form_for @medicine, url: addstock_create_add_medicine_path do |form| %>
+              <div class="field">
+                <%= form.label :name %>
+                <%= form.text_field :name %>
+              </div>
+              <div class="field">
+                <%= form.label :category %>
+                <%= form.collection_select :category_id, Category.all, :id, :name %>
+              </div>
+              <div class="actions">
+                <%= form.submit %>
+              </div>
+            <% end %>
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+  </div><!--/row-->
+
+</div> <!-- /container -->

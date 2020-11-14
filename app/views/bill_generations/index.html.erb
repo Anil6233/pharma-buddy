@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bill Generations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sno</th>
+      <th>Items</th>
+      <th>Total</th>
+      <th>Discount</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bill_generations.each do |bill_generation| %>
+      <tr>
+        <td><%= bill_generation.sno %></td>
+        <td><%= bill_generation.items %></td>
+        <td><%= bill_generation.total %></td>
+        <td><%= bill_generation.discount %></td>
+        <td><%= bill_generation.amount %></td>
+        <td><%= link_to 'Show', bill_generation %></td>
+        <td><%= link_to 'Edit', edit_bill_generation_path(bill_generation) %></td>
+        <td><%= link_to 'Destroy', bill_generation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill Generation', new_bill_generation_path %>

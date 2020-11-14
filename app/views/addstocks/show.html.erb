@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @addstock.medicine.name %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @addstock.cost %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @addstock.quantity %>
+</p>
+
+<p>
+  <strong>Manufacturer date:</strong>
+  <%= @addstock.manufacturer_date %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @addstock.expiry_date %>
+</p>
+
+<%= link_to 'Edit', edit_addstock_path(@addstock) %> |
+<%= link_to 'Back', addstocks_path %>

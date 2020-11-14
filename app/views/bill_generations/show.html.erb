@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sno:</strong>
+  <%= @bill_generation.sno %>
+</p>
+
+<p>
+  <strong>Items:</strong>
+  <%= @bill_generation.items %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @bill_generation.total %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @bill_generation.discount %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bill_generation.amount %>
+</p>
+
+<%= link_to 'Edit', edit_bill_generation_path(@bill_generation) %> |
+<%= link_to 'Back', bill_generations_path %>

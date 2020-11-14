@@ -1,0 +1,2 @@
+module BillGenerationsHelper
+end

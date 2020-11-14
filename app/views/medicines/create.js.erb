@@ -1,0 +1,11 @@
+<%byebug%>
+
+<% if @medicine.errors.any? %>
+    document.querySelector('#error_explanation') ? document.querySelector('#error_explanation').remove() : null ;
+    document.querySelector('#medicine_form').insertAdjacentHTML('afterbegin','<%= escape_javascript(render "shared/validation-messages", object: @medicine) %>');
+<% else %>
+    document.querySelector('#error_explanation') ? document.querySelector('#error_explanation').remove() : null ;
+    document.querySelector("select#addstock_medicine_id option[selected='selected']") ? document.querySelector("select#addstock_medicine_id option[selected='selected']").removeAttribute('selected') : null ;
+    document.querySelector('select#addstock_medicine_id').insertAdjacentHTML('afterlogin', '<option value="<%= medicine.id %>" selected="selected" ><%= @author.formatted_name %></option>') ;
+    document.querySelector('#medicine_form').reset();
+<% end %>
